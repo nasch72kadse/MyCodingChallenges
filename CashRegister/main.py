@@ -15,6 +15,7 @@ def calculate_change(change_value: float):
     change_list = []
     while change_value > 0.00:
         # Round because of internal representation of floating-point numbers (Having numbers like 0.00000006)
+        # It also ensures that the input only consists of two decimal places
         change_value = round(change_value, 2)
         # Check how many coins of every type fit in
         for coin_value, coin_description in CHANGE_COINS.items():
